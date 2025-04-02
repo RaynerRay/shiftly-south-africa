@@ -4,6 +4,7 @@ import { Pill } from "lucide-react";
 import { CommandMenu } from "../command-menu";
 import { getServices } from "@/actions/services";
 import SearchBar from "./SearchBar";
+import Image from "next/image";
 // import SearchBar from "../SearchBar";
 
 const Hero = async () => {
@@ -75,7 +76,9 @@ const Hero = async () => {
             <div className="w-full px-4 lg:w-5/12">
               <div className="lg:ml-auto lg:text-right">
                 <div className="relative z-10 inline-block pt-11 lg:pt-0">
-                  <img
+                  <Image
+                  height={500}
+                  width={500}
                     src="https://cdn.tailgrids.com/1.0/assets/images/hero/hero-image-01.png"
                     alt="hero"
                     className="max-w-full lg:ml-auto"
@@ -131,7 +134,7 @@ const SingleImage = ({ href, imgSrc }: { href: string; imgSrc: string }) => {
   return (
     <>
       <a href={href} className="flex w-full items-center justify-center">
-        <img src={imgSrc} alt="brand image" className="h-10 w-full" />
+        <Image height={500} width={500} src={imgSrc} alt="brand image" className="h-10 w-full" />
       </a>
     </>
   );

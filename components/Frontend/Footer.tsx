@@ -1,5 +1,6 @@
 "use client";
 import { Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function Footer() {
@@ -101,7 +102,7 @@ export default function Footer() {
       <div className="gap-6 justify-between md:flex">
         <div className="flex-1">
           <div className="max-w-xs">
-            <img src="https://www.floatui.com/logo.svg" className="w-32" />
+            <Image height={500} width={500} src="https://www.floatui.com/logo.svg" className="w-32" alt="logo"/>
             <p className="leading-relaxed mt-2 text-[15px]">
               Lorem Ipsum has been the industry's standard dummy text ever since
               the 1500s.

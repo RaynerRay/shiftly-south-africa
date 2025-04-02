@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export type SingleImageProps = {
@@ -54,7 +55,7 @@ const SingleImage = ({ href, imgSrc, Alt }: SingleImageProps) => {
         href={href}
         className="mx-4 flex w-[150px] items-center justify-center  2xl:w-[180px]"
       >
-        <img src={imgSrc} alt={Alt} className="w-full h-10" />
+        <Image height={500} width={500}  src={imgSrc} alt={Alt} className="w-full h-10" />
       </a>
     </>
   );
