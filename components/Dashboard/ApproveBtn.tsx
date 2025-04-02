@@ -57,7 +57,11 @@ export default function ApproveBtn({
       if (res?.status === 201) {
         toast.success("Doctor Status Changed Successfully");
         setLoading(false);
-        window.location.reload();
+        router.refresh(); // Use Next.js router to refresh the page instead
+        // Or if you still need to use window.location.reload():
+        if (typeof window !== 'undefined') {
+          window.location.reload();
+        }
       }
     } catch (error) {
       setLoading(true);
