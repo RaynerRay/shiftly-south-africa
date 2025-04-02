@@ -28,6 +28,8 @@ import {
 import { Search } from "lucide-react";
 import { Service } from "@prisma/client";
 import Image from "next/image";
+
+
 export interface CommandMenuProps extends DialogProps {
   services: Service[];
 }
@@ -37,6 +39,8 @@ export function CommandMenu({ services, ...props }: CommandMenuProps) {
   const { setTheme } = useTheme();
 
   React.useEffect(() => {
+    if (typeof document === "undefined") return;
+    
     const down = (e: KeyboardEvent) => {
       if ((e.key === "k" && (e.metaKey || e.ctrlKey)) || e.key === "/") {
         if (
@@ -47,12 +51,12 @@ export function CommandMenu({ services, ...props }: CommandMenuProps) {
         ) {
           return;
         }
-
+  
         e.preventDefault();
         setOpen((open) => !open);
       }
     };
-
+  
     document.addEventListener("keydown", down);
     return () => document.removeEventListener("keydown", down);
   }, []);
